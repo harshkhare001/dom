@@ -83,3 +83,65 @@ var secondItem = document.querySelector('.list-group-item:nth-child(2)');
 secondItem.style.backgroundColor='green';
 var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
 thirdItem.style.display='none';
+
+
+var itemList = document.querySelector('#items');
+
+console.log(itemList.parentNode);
+itemList.parentNode.style.backgroundColor = 'purple';
+
+console.log(itemList.parentNode.parentNode.parentNode);
+
+
+console.log(itemList.parentElement);
+itemList.parentElement.style.backgroundColor = 'grey';
+
+console.log(itemList.childNodes);
+
+console.log(itemList.children);
+console.log(itemList.children[2]);
+itemList.children[2].style.backgroundColor='yellow';
+
+console.log(itemList.firstChild);
+
+console.log(itemList.firstElementChild);
+//itemList.firstElementChild.textContent = 'Hello'
+
+console.log(itemList.lastChild);
+
+console.log(itemList.lastElementChild);
+itemList.lastElementChild.style.backgroundColor='pink';
+
+var itemList = document.querySelector('#items');
+console.log(itemList.nextElementSibling);
+console.log(itemList.nextSibling);
+
+console.log(itemList.previousElementSibling);
+console.log(itemList.previousSibling);
+
+itemList.previousElementSibling.style.backgroundColor='red';
+
+
+var newDiv = document.createElement('div');
+
+newDiv.id='hello1';
+newDiv.className = 'hello';
+newDiv.setAttribute('title','hello');
+var divText = document.createTextNode('Hello');
+newDiv.appendChild(divText);
+console.log(newDiv);
+
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+container.insertBefore(newDiv,h1);
+
+
+var container2 = document.querySelector('.list-group');
+
+let li = document.createElement('li');
+li.className = 'list-group-item';
+li.innerText = 'Hello';
+container2.insertBefore(li,container2.firstChild);
+//container2.appendChild(li);
