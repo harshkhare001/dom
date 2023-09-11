@@ -22,5 +22,12 @@ console.log(headerTitle.textContent)
 var header = document.getElementById('main-header');
 header.style.borderBottom='solid 3px black';
 
-var items = document.getElementsByClassName('list-group');
+var items = document.getElementsByClassName('list-group-item');
 console.log(items);
+console.log(items[1]);
+
+items[0].style.fontWeight ='bold';
+items[1].style.fontWeight ='bold';
+items[2].style.fontWeight ='bold';
+items[3].style.fontWeight ='bold';
+items[2].style.backgroundColor='green';
