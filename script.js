@@ -145,3 +145,46 @@ li.className = 'list-group-item';
 li.innerText = 'Hello';
 container2.insertBefore(li,container2.firstChild);
 //container2.appendChild(li);
+var form = document.getElementById("addForm");
+
+var itemList = document.getElementById('items');
+
+var item = document.getElementById('item');
+
+
+form.addEventListener('submit', addItem);
+
+function addItem(e){
+	e.preventDefault();
+	console.log(1);
+	var item = document.getElementById('item');
+
+	var li = document.createElement('li');
+
+	li.className='list-group-item';
+	li.appendChild(document.createTextNode(item.value));
+	//delete button 
+	var delbutton  = document.createElement('button');
+	delbutton.className= 'btn btn-danger btn-sm float-right delete';
+	//now add x for the delete button
+	delbutton.appendChild(document.createTextNode('x'));
+	li.appendChild(delbutton);
+
+	var editButton = document.createElement('button');
+	editButton.className='btn  btn-sm float-right edit mr-3';
+	editButton.appendChild(document.createTextNode('edit'));
+	li.appendChild(editButton);
+
+	itemList.appendChild(li);
+}
+
+itemList.addEventListener('click',removeItem);
+
+function removeItem(e){
+	e.preventDefault();
+
+	if(e.target.classList.contains('delete')){
+		var li = e.target.parentElement;
+		itemList.removeChild(li);
+	}
+}
